@@ -170,3 +170,76 @@ body { padding-top: 72px; padding-bottom: 48px; }
   .header-inner { flex-direction:column; align-items:flex-start; }
   .hero-title { font-size:1.8rem; }
 }
+
+/* Responsive navbar toggle */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nav-toggle .hamburger {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #072d4b;
+  position: relative;
+}
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: #072d4b;
+}
+.nav-toggle .hamburger::before { top: -6px; }
+.nav-toggle .hamburger::after { top: 6px; }
+
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .nav.nav-open { display: flex; flex-direction: column; gap: 0.25rem; width: 100%; margin-top: 0.6rem; }
+  .nav.nav-open .nav-item { width: 100%; }
+  .nav.nav-open .nav-link { display: block; width: 100%; padding: 0.8rem 1rem; border-radius: 8px; }
+  .nav-toggle { display: inline-flex; }
+  .d-flex.align-items-center.justify-content-between.py-2 { gap: 0.5rem; }
+}
+
+@media (max-width: 600px) {
+  .site-header { padding: 0.4rem 0; }
+  .nav.nav-open { margin-top: 0.5rem; }
+  .hero { padding: 2rem 0; }
+  .hero-body { padding: 0 0.5rem; }
+}
+
+/* animation and backdrop */
+@keyframes navSlideDown {
+  from { transform: translateY(-8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.nav.nav-open { animation: navSlideDown 220ms ease both; }
+
+.nav-backdrop { display: none; }
+@media (max-width: 900px) {
+  .nav-backdrop { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.32); opacity: 0; pointer-events: none; transition: opacity 200ms ease; z-index: 1025; }
+  .nav-backdrop.open { opacity: 1; pointer-events: auto; }
+  /* ensure header/nav sits above backdrop */
+  .site-header { z-index: 1030; }
+}
+
+/* polished hamburger -> X animation */
+.nav-toggle { transition: transform 180ms ease; }
+.nav-toggle .hamburger { transition: background 180ms ease; }
+.nav-toggle[aria-expanded="true"] .hamburger { background: transparent; }
+.nav-toggle[aria-expanded="true"] .hamburger::before { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .hamburger::after { transform: translateY(-6px) rotate(-45deg); }
+.nav-toggle .hamburger::before, .nav-toggle .hamburger::after { transition: transform 180ms ease; transform-origin: center; }
+
+/* nav slide + subtle scale */
+.nav.nav-open { transform-origin: top center; transform: translateY(0) scaleY(1); }
+.nav { transition: transform 220ms ease, opacity 180ms ease; }
