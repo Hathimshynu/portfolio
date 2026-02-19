@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <main className="container page">
@@ -8,7 +10,7 @@ function Home() {
           <p className="muted">3+ Years Experience in Scalable Web Applications</p>
 
           <div className="hero-cta mt-3">
-            <a href="/projects" className="btn btn-primary me-2">View Projects</a>
+            <Link to="/projects" className="btn btn-primary me-2">View Projects</Link>
             <a href="/resume.pdf" className="btn btn-outline-primary me-2" download>Download Resume</a>
             <a href="https://github.com/Hathimshynu" target="_blank" rel="noreferrer" className="btn btn-dark me-2">GitHub</a>
             <a href="https://www.linkedin.com/in/hathimshynu9597" target="_blank" rel="noreferrer" className="btn btn-outline-dark">LinkedIn</a>
