@@ -171,6 +171,19 @@ body { padding-top: 72px; padding-bottom: 48px; }
   .hero-title { font-size:1.8rem; }
 }
 
+/* Stack hero CTA buttons on small screens for better UX */
+@media (max-width: 600px) {
+  .hero-cta { display:flex; flex-direction:column; gap:0.6rem; align-items:stretch; }
+  .hero-cta .btn { width:100%; margin-right:0 !important; }
+}
+
+/* Ensure mobile nav is above backdrop and links are large enough to tap */
+@media (max-width: 900px) {
+  .nav.nav-open { position: relative; z-index: 1040; padding: 0.6rem; background: transparent; }
+  .nav.nav-open .nav-link { padding: 0.9rem 1rem; font-size: 1rem; }
+  .nav-backdrop { z-index: 1020; }
+}
+
 /* Responsive navbar toggle */
 .nav-toggle {
   display: none;
