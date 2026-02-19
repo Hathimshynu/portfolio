@@ -9,6 +9,12 @@ const svgFiles = [
   { src: 'apple-touch-icon.svg', sizes: [180] }
 ];
 
+// screenshots to generate from vite.svg
+const screenshots = [
+  { src: 'vite.svg', out: 'screenshot-wide.png', size: [1200, 800] },
+  { src: 'vite.svg', out: 'screenshot-mobile.png', size: [640, 360] }
+];
+
 async function generate() {
   try {
     for (const file of svgFiles) {
@@ -25,6 +31,18 @@ async function generate() {
         await sharp(svgBuffer).resize(size, size).png().toFile(outPath);
         console.log('Wrote', outPath);
       }
+    }
+    // generate screenshots
+    for (const sc of screenshots) {
+      const svgPath = path.join(publicDir, sc.src);
+      if (!fs.existsSync(svgPath)) {
+        console.warn('Missing SVG for screenshot:', svgPath);
+        continue;
+      }
+      const svgBuffer = fs.readFileSync(svgPath);
+      const outPath = path.join(publicDir, sc.out);
+      await sharp(svgBuffer).resize(sc.size[0], sc.size[1]).png().toFile(outPath);
+      console.log('Wrote', outPath);
     }
     console.log('Icon generation complete.');
   } catch (err) {
