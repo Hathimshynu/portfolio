@@ -1,11 +1,15 @@
+import ParallaxSection from "../components/ParallaxSection";
+
 function Blog(){
   return (
-    <main className="container page">
-      <header className="page-header">
-        <h1>Blog</h1>
-        <p className="muted">Something Loading</p>
-      </header>
-    </main>
+    <ParallaxSection depth={0.4}>
+      <main className="container page">
+        <header className="page-header">
+          <h1>Blog</h1>
+          <p className="muted">Something Loading</p>
+        </header>
+      </main>
+    </ParallaxSection>
   );
 }
 

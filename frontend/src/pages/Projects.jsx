@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProjectCard from '../components/ProjectCard';
+import ParallaxSection from '../components/ParallaxSection';
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
@@ -83,15 +84,17 @@ export default function Projects(){
   }, []);
 
   return (
-    <main className="container page">
-      <header className="page-header">
-        <h1>Projects</h1>
-        <p className="muted">Selected work demonstrating technologies and impact.</p>
-      </header>
-      {loading && <p>Loading projects...</p>}
-      <section className="projects-grid">
-        {projects.map(p => <ProjectCard key={p._id} project={p} />)}
-      </section>
-    </main>
+    <ParallaxSection depth={0.5}>
+      <main className="container page">
+        <header className="page-header">
+          <h1>Projects</h1>
+          <p className="muted">Selected work demonstrating technologies and impact.</p>
+        </header>
+        {loading && <p>Loading projects...</p>}
+        <section className="projects-grid">
+          {projects.map(p => <ProjectCard key={p._id} project={p} />)}
+        </section>
+      </main>
+    </ParallaxSection>
   );
 }
