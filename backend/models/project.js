@@ -7,7 +7,7 @@ const projectSchema = new mongoose.Schema({
   highlights: [String],
   role: String,
   company: String,
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now, index: true } // Add index for faster sorting
 });
 
 module.exports = mongoose.model('Project', projectSchema);
