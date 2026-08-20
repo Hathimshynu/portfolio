@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portfolio-static-v1';
+const CACHE_NAME = 'portfolio-static-v2';
 const OFFLINE_URL = '/offline.html';
 const PRECACHE_ASSETS = [
   '/',
@@ -35,6 +35,11 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') return;
 
   const url = new URL(request.url);
+
+  // Vite owns development modules and the HMR client. Never cache them.
+  if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
+    return;
+  }
 
   // Network-first for navigation requests (HTML pages)
   if (request.mode === 'navigate' || (request.headers.get('accept') || '').includes('text/html')) {

@@ -8,19 +8,15 @@ export default function ProjectCard({ project }){
         <div className="project-body">
           <h3 className="project-title">{project.title}</h3>
           <p className="project-desc">{project.description}</p>
-          {project.highlights && (
-            <ul className="small muted">
-              {project.highlights.map((h, i) => <li key={i}>{h}</li>)}
-            </ul>
-          )}
           {project.tech?.length > 0 && (
             <div className="project-tags mt-2">
               {project.tech.map((t) => <span key={t} className="tag">{t}</span>)}
             </div>
           )}
           <div className="project-actions mt-3">
-            {project.liveUrl && <a className="btn btn-primary btn-sm" href={project.liveUrl} target="_blank" rel="noreferrer">Live</a>}
-            {project.repoUrl && <a className="btn btn-outline-secondary btn-sm" href={project.repoUrl} target="_blank" rel="noreferrer">Repo</a>}
+            {project.liveUrl && <a className="project-link" href={project.liveUrl} target={project.liveUrl !== '#' ? '_blank' : undefined} rel={project.liveUrl !== '#' ? 'noreferrer' : undefined}>View Project</a>}
+            {project.repoUrl && <a className="project-link project-repo-link" href={project.repoUrl} target="_blank" rel="noreferrer">GitHub Repo</a>}
+            {project.secondaryRepoUrl && <a className="project-link project-repo-link" href={project.secondaryRepoUrl} target="_blank" rel="noreferrer">Backend Repo</a>}
           </div>
         </div>
       </article>

@@ -9,7 +9,7 @@ function Navbar() {
     <header className="site-header fixed-top">
       <div className="container-fluid px-4">
         <div className="d-flex align-items-center justify-content-between py-2">
-          <Link to="/" className="navbar-brand mb-0 h4 text-primary">Shynu Portfolio</Link>
+          <Link to="/" className="navbar-brand mb-0 h4">C.R. Shynumon</Link>
 
           <button
             className="nav-toggle"
@@ -23,11 +23,9 @@ function Navbar() {
           <nav>
             <ul className={"nav" + (open ? " nav-open" : "")}>
               <li className="nav-item"><NavLink to="/" end onClick={close} className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink></li>
+              <li className="nav-item"><NavLink to="/about" onClick={close} className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>About</NavLink></li>
               <li className="nav-item"><NavLink to="/projects" onClick={close} className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Projects</NavLink></li>
               <li className="nav-item"><NavLink to="/skills" onClick={close} className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Skills</NavLink></li>
-              <li className="nav-item"><NavLink to="/experience" onClick={close} className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Experience</NavLink></li>
-              <li className="nav-item"><NavLink to="/blog" onClick={close} className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Blog</NavLink></li>
-              <li className="nav-item"><NavLink to="/about" onClick={close} className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>About</NavLink></li>
               <li className="nav-item"><NavLink to="/contact" onClick={close} className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Contact</NavLink></li>
             </ul>
           </nav>

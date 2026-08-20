@@ -8,14 +8,10 @@ import Experience from './pages/Experience';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
-import ThreeDBackground from './components/ThreeDBackground';
-import FloatingShapes from './components/FloatingShapes';
 
 function App(){
   return (
     <BrowserRouter>
-      <ThreeDBackground />
-      <FloatingShapes count={12} />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home/>} />

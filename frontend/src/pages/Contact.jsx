@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import axios from 'axios';
 import ParallaxSection from '../components/ParallaxSection';
-
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 function Contact(){
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
@@ -17,10 +13,6 @@ function Contact(){
     if (!name.trim()) e.name = 'Name is required.';
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) e.email = 'Please enter a valid email.';
-    // sanitize phone to digits and optional leading +
-    const digits = phone.replace(/[^0-9+]/g, '');
-    const digitsOnly = digits.replace(/[^0-9]/g, '');
-    if (!/^[+]?\d{7,15}$/.test(digits)) e.phone = 'Please enter a valid phone number.';
     if (!message.trim()) e.message = 'Message cannot be empty.';
     return e;
   }
@@ -30,17 +22,11 @@ function Contact(){
     const eObj = validate();
     setErrors(eObj);
     if (Object.keys(eObj).length === 0) {
-      // submit to backend
-      axios.post(`${API}/api/contact`, { name, email, phone, message })
-        .then(() => {
-          setSent(true);
-          setName(''); setEmail(''); setPhone(''); setMessage('');
-          setTimeout(() => setSent(false), 4000);
-        })
-        .catch(err => {
-          console.error('Contact post error:', err?.response?.data || err.message);
-          setErrors({ form: 'Failed to send message. Try again later.' });
-        });
+      const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
+      const body = encodeURIComponent(`${message}\n\nReply to: ${email}`);
+      window.location.href = `mailto:shynushyni55@gmail.com?subject=${subject}&body=${body}`;
+      setSent(true);
+      setName(''); setEmail(''); setMessage('');
     }
   }
 
@@ -48,14 +34,13 @@ function Contact(){
     <ParallaxSection depth={0.4}>
       <main className="container page">
         <header className="page-header">
-          <h1>Contact</h1>
-          <p className="muted">Get in touch — available for freelance and full-time roles.</p>
+          <h1>Contact Me</h1>
+          <p className="muted">Have a project in mind or want to collaborate? Feel free to reach out!</p>
         </header>
         <section className="content">
           <p>
             Email: <a href="mailto:shynushyni55@gmail.com">shynushyni55@gmail.com</a>
           </p>
-          <p>Mobile: +91 9597610074</p>
           <p>GitHub: <a href="https://github.com/Hathimshynu" target="_blank" rel="noreferrer">github.com/Hathimshynu</a></p>
           <p>LinkedIn: <a href="https://www.linkedin.com/in/hathimshynu9597" target="_blank" rel="noreferrer">linkedin.com/in/shynu</a></p>
 
@@ -84,17 +69,6 @@ function Contact(){
                 placeholder="Email"
               />
               {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-            </div>
-            <div className="col-md-6">
-              <label className="form-label visually-hidden">Mobile</label>
-              <input
-                value={phone}
-                onChange={e=>setPhone(e.target.value)}
-                onKeyUp={()=> setErrors(prev=>{ const c={...prev}; delete c.phone; return c; })}
-                className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
-                placeholder="Mobile (e.g. +919597610074)"
-              />
-              {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
             </div>
             <div className="col-12">
               <label className="form-label visually-hidden">Message</label>

@@ -6,22 +6,24 @@ function Home() {
     <ParallaxSection depth={0.3}>
       <main className="container page">
         <section className="hero">
+          <div className="hero-visual">
+            <img src="/shynu.jpg" alt="C.R. Shynumon" />
+          </div>
           <div className="hero-body">
+            <p className="eyebrow">Hello, It's Me</p>
             <h1 className="hero-title">C.R. Shynumon</h1>
-            <p className="hero-sub">Laravel Backend Developer | REST API Specialist</p>
-            <p className="muted">3+ Years Experience in Scalable Web Applications</p>
+            <p className="hero-sub">And I'm a <span>Full Stack Developer</span></p>
+            <p className="muted">I build reliable web products across the frontend, backend, APIs, and databases.</p>
 
             <div className="hero-cta mt-3">
               <Link to="/projects" className="btn btn-primary me-2">View Projects</Link>
-              <a href="/resume.pdf" className="btn btn-outline-primary me-2" download>Download Resume</a>
-              <a href="https://github.com/Hathimshynu" target="_blank" rel="noreferrer" className="btn btn-dark me-2">GitHub</a>
-              <a href="https://www.linkedin.com/in/hathimshynu9597" target="_blank" rel="noreferrer" className="btn btn-outline-dark">LinkedIn</a>
+              <a href="/resume.pdf" className="btn btn-outline-primary me-2" download>Resume</a>
             </div>
 
             <div className="mt-4 text-start">
-              <h5>Professional statement</h5>
+              <h5>Building with curiosity</h5>
               <p className="text-white">
-                Results-driven PHP Developer with 3+ years of experience building scalable Laravel applications, designing optimized MySQL schemas, and developing secure RESTful APIs. Experienced in SaaS finance systems, e-commerce platforms, and real-time booking applications.
+                I enjoy turning ideas into clear, polished web experiences with React, Next.js, Laravel, Node.js, and Python.
               </p>
             </div>
           </div>
