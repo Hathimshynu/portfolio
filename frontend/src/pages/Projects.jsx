@@ -18,7 +18,8 @@ const projects = [
     description: 'A WhatsApp-like real-time chat platform with authentication, online presence, read receipts, media sharing, notifications, stickers, GIFs, and audio calls.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Pusher', 'Socket.io', 'WebRTC'],
     image: '/chatapp-project.svg',
-    repoUrl: 'https://github.com/Hathimshynu/chatapp.git'
+    repoUrl: 'https://github.com/Hathimshynu/chatapp.git',
+    liveUrl: 'https://chatapp-shynu.vercel.app/'
   },
   {
     _id: 'ecommerce',
