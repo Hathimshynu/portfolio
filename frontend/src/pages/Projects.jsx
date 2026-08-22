@@ -19,7 +19,16 @@ const projects = [
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Pusher', 'Socket.io', 'WebRTC'],
     image: '/chatapp-project.png',
     repoUrl: 'https://github.com/Hathimshynu/chatapp.git',
-    liveUrl: 'https://chatapp-shynu.vercel.app/'
+    liveUrl: 'https://chatapp-two-rosy.vercel.app/'
+  },
+  {
+    _id: 'cognodb-pathfinder',
+    title: 'CognoDB Pathfinder',
+    description: 'A graph-powered talent map that explores career paths through connected roles, skills, people, and projects using multi-hop CognoDB queries with a demo fallback.',
+    tech: ['Next.js', 'React', 'TypeScript', 'CognoDB', 'Neo4j Driver', 'openCypher'],
+    image: '/cognodb.png',
+    repoUrl: 'https://github.com/Hathimshynu/cognodb-assignment',
+    liveUrl: 'https://cognodb-assignment-shynu.vercel.app/'
   },
   {
     _id: 'ecommerce',
