@@ -3,6 +3,15 @@ import ParallaxSection from '../components/ParallaxSection';
 
 const projects = [
   {
+    _id: 'hospital-web',
+    title: 'Hospital Website',
+    description: 'A fast, SEO-ready multispeciality hospital website with departments, doctor profiles, services, facilities, blog, WhatsApp appointment booking, and progressive 3D and particle animations.',
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'React Three Fiber', 'Three.js'],
+    image: '/hospital-project.png',
+    repoUrl: 'https://github.com/Hathimshynu/hospital-web.git',
+    liveUrl: 'https://hospital-web-black.vercel.app/'
+  },
+  {
     _id: 'journalpilot',
     title: 'JournalPilot',
     description: 'A manuscript workspace for uploading PDF and DOCX files, managing research drafts, and requesting Gemini-powered readiness analysis.',
