@@ -3,6 +3,24 @@ import ParallaxSection from '../components/ParallaxSection';
 
 const projects = [
   {
+    _id: 'alien-shift',
+    title: 'Alien Shift',
+    description: 'An original 3D browser action game where a Shiftwatch transforms you into ten alien heroes to fight robot waves, with combos, ultimates, three bosses, an upgrade lab, endless mode, and touch controls.',
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'React Three Fiber', 'Three.js', 'Rapier Physics', 'Zustand', 'Web Audio API'],
+    image: '/alien-shift-project.png',
+    repoUrl: 'https://github.com/Hathimshynu/alien-shift',
+    liveUrl: 'https://alien-shift.vercel.app/'
+  },
+  {
+    _id: 'hari-jewellery',
+    title: 'Sri Hari Jewellers',
+    description: 'A scroll-driven, WebGL-led jewellery showroom website with cinematic 3D product scenes, realistic gold, gem and diamond materials, device-tier fallbacks, and SEO-ready collection pages.',
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'React Three Fiber', 'GSAP ScrollTrigger', 'Lenis', 'Framer Motion', 'Tailwind CSS'],
+    image: '/hari-jewellery-project.png',
+    repoUrl: 'https://github.com/Hathimshynu/hari-jewellery',
+    liveUrl: 'https://hari-jewellery.vercel.app/'
+  },
+  {
     _id: 'hospital-web',
     title: 'Hospital Website',
     description: 'A fast, SEO-ready multispeciality hospital website with departments, doctor profiles, services, facilities, blog, WhatsApp appointment booking, and progressive 3D and particle animations.',
