@@ -3,6 +3,15 @@ import ParallaxSection from '../components/ParallaxSection';
 
 const projects = [
   {
+    _id: 'shy-ludo',
+    title: 'Snake Royale',
+    description: 'A real-time online Snake & Ladder game for 2–8 players with shareable room codes, matchmaking, a server-authoritative dice engine, 3D dice, animated snakes and ladders, seat-saving reconnects, turn timers, and an installable PWA.',
+    tech: ['React 19', 'TypeScript', 'Vite', 'Node.js', 'Express', 'Socket.IO', 'Three.js', 'Zustand', 'Tailwind CSS', 'PWA'],
+    image: '/shy-ludo-project.png',
+    repoUrl: 'https://github.com/Hathimshynu/shy-ludo.git',
+    liveUrl: 'https://shy-ludo.vercel.app/'
+  },
+  {
     _id: 'alien-shift',
     title: 'Alien Shift',
     description: 'An original 3D browser action game where a Shiftwatch transforms you into ten alien heroes to fight robot waves, with combos, ultimates, three bosses, an upgrade lab, endless mode, and touch controls.',
