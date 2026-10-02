@@ -3,13 +3,13 @@ import ParallaxSection from '../components/ParallaxSection';
 
 const projects = [
   {
-    _id: 'shy-ludo',
+    _id: 'snake-royale',
     title: 'Snake Royale',
     description: 'A real-time online Snake & Ladder game for 2–8 players with shareable room codes, matchmaking, a server-authoritative dice engine, 3D dice, animated snakes and ladders, seat-saving reconnects, turn timers, and an installable PWA.',
     tech: ['React 19', 'TypeScript', 'Vite', 'Node.js', 'Express', 'Socket.IO', 'Three.js', 'Zustand', 'Tailwind CSS', 'PWA'],
-    image: '/shy-ludo-project.png',
-    repoUrl: 'https://github.com/Hathimshynu/shy-ludo.git',
-    liveUrl: 'https://shy-ludo.vercel.app/'
+    image: '/snake-royale-project.png',
+    repoUrl: 'https://github.com/Hathimshynu/snake-royal.git',
+    liveUrl: 'https://snake-royal.vercel.app/'
   },
   {
     _id: 'alien-shift',
