@@ -3,6 +3,15 @@ import ParallaxSection from '../components/ParallaxSection';
 
 const projects = [
   {
+    _id: 'ludo-nova',
+    title: 'Ludo Nova',
+    description: 'A server-authoritative 3D online Ludo game for 2–8 players with quick-match matchmaking, private rooms with custom rules, four levels of AI, boards that reshape into 6- and 8-arm stars, seat-saving reconnects, leaderboards, and an installable mobile-first PWA.',
+    tech: ['React 19', 'TypeScript', 'Vite', 'React Three Fiber', 'Node.js', 'Express', 'Socket.IO', 'PostgreSQL', 'Prisma', 'Redis', 'Zustand', 'PWA'],
+    image: '/ludo-nova-project.png',
+    repoUrl: 'https://github.com/Hathimshynu/shy-ludo.git',
+    liveUrl: 'https://shy-ludo-seven.vercel.app/'
+  },
+  {
     _id: 'snake-royale',
     title: 'Snake Royale',
     description: 'A real-time online Snake & Ladder game for 2–8 players with shareable room codes, matchmaking, a server-authoritative dice engine, 3D dice, animated snakes and ladders, seat-saving reconnects, turn timers, and an installable PWA.',
