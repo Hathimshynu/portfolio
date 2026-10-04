@@ -9,6 +9,7 @@ import Experience from './pages/Experience';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import Footer from './components/Footer';
 
 function ScrollToTop() {
@@ -35,6 +36,7 @@ function App(){
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/privacy" element={<Privacy/>} />
+        <Route path="/terms" element={<Terms/>} />
       </Routes>
       <Footer />
     </BrowserRouter>

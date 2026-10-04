@@ -860,6 +860,11 @@ h1, h2, h3, h4, h5 { color: var(--text); line-height: 1.15; }
 .form-control { width: 100%; margin-bottom: 1rem; padding: .95rem 1.1rem; border: 2px solid var(--border); border-radius: 10px; background: transparent; color: var(--text); }
 .form-control::placeholder { color: #78839a; }
 .site-footer { position: static !important; padding: 1.5rem 0; background: var(--header); color: var(--muted); }
+.footer-content { display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.site-footer .footer-text { line-height: 1.5; }
+.footer-links { display: flex; justify-content: center; gap: .5rem; }
+.footer-links a { color: var(--muted); }
+.footer-links a:hover { color: var(--accent); }
 @media (max-width: 700px) {
   .container { width: min(100% - 32px, 560px); }
   .site-header .d-flex { padding: 0 1rem; }
