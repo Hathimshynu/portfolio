@@ -52,7 +52,9 @@ function TypingLine({ text, className, startDelay = 0, as: Component = "p" }) {
 
   return (
     <Component className={`${className} intro-line ${isTyping ? "is-typing" : "is-complete"}`}>
-      {displayedText}
+      {/* Full text for search engines and screen readers; the animated copy is decorative. */}
+      <span className="visually-hidden">{text}</span>
+      <span aria-hidden="true">{displayedText}</span>
       <span className="typing-cursor" aria-hidden="true" />
     </Component>
   );
@@ -64,13 +66,15 @@ function Home() {
       <main className="container page">
         <section className="hero">
           <div className="hero-visual">
-            <img src="/shynu.jpg" alt="C.R. Shynumon" />
+            <img src="/shynu.jpg" alt="Hathim Shynu (C.R. Shynumon), freelance web developer in Marthandam, Kanyakumari" />
           </div>
           <div className="hero-body">
             <TypingLine text="Hello, It's Me" className="eyebrow" startDelay={200} as="p" />
-            <TypingLine text="C.R. Shynumon" className="hero-title" startDelay={1100} as="h1" />
+            <TypingLine text="Hathim Shynu" className="hero-title" startDelay={1100} as="h1" />
             <TypingLine text="And I'm a Full Stack Developer" className="hero-sub" startDelay={2200} as="p" />
-            <p className="muted hero-description">I build reliable web products across the frontend, backend, APIs, and databases.</p>
+            <p className="muted hero-description">
+              Freelance web developer in Marthandam, Kanyakumari. I build reliable websites and web apps across the frontend, backend, APIs, and databases.
+            </p>
 
             <div className="hero-cta mt-3">
               <Link to="/projects" className="btn btn-primary me-2">View Projects</Link>
@@ -84,6 +88,27 @@ function Home() {
               </p>
             </div>
           </div>
+        </section>
+
+        <section className="content mt-5" aria-labelledby="local-services">
+          <h2 id="local-services">Freelance Web Developer in Marthandam &amp; Kanyakumari</h2>
+          <p>
+            I'm Hathim Shynu (C.R. Shynumon), a freelance full stack web developer based in Marthandam,
+            Kanyakumari district, Tamil Nadu. I help shops, startups, schools, clinics and local businesses in
+            Marthandam, Irenipuram, Kuzhithurai, Nagercoil and across Kanyakumari get online with fast,
+            modern websites and custom web applications.
+          </p>
+          <ul>
+            <li>Business and portfolio website design</li>
+            <li>E-commerce websites and online stores</li>
+            <li>Custom web apps, dashboards and booking systems</li>
+            <li>React, Next.js, Node.js, Laravel and Python development</li>
+            <li>Website redesign, speed and SEO improvements</li>
+          </ul>
+          <p>
+            Looking for a web developer in Marthandam or a freelancer in Kanyakumari?{" "}
+            <Link to="/contact">Get in touch</Link> or call <a href="tel:+919597610074">+91 9597610074</a>.
+          </p>
         </section>
       </main>
     </ParallaxSection>

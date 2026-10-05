@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Footer from './components/Footer';
+import Seo from './components/Seo';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -26,6 +27,7 @@ function App(){
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Seo />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home/>} />
